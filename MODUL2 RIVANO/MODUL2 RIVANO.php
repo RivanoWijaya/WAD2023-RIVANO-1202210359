@@ -19,6 +19,7 @@ $errormsg = "Tinggi badan dan berat badan tidak boleh kosong ";
 $successmsg = "Data berhasil masuk";
 $hasil = "";
 $status = "";
+$bmi = "";
 
 
 if ($tinggi_badan == null && $berat_badan == null) {

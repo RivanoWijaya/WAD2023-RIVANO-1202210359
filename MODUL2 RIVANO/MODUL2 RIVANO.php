@@ -17,7 +17,10 @@ if(isset($_POST)){
 // silakan taruh code kalian di bawah
 $errormsg = "Tinggi badan dan berat badan tidak boleh kosong ";
 $successmsg = "Data berhasil masuk";
-$status1 = "Underweight";
+$hasil = "";
+$status = "";
+
+
 if ($tinggi_badan == null && $berat_badan == null) {
     $hasil = $errormsg;
 } 
@@ -32,11 +35,23 @@ else{
     $tinggi_badan = $tinggi_badan/100;
     $kuadrat = $tinggi_badan*$tinggi_badan;
     $bmi = $berat_badan/$kuadrat;
+    
 
     if ($bmi <= 18.4) {
     $status = "Underweight";
-    }
+    }elseif ($bmi >=18.5 && $bmi <=24.9) {
+        $status = "Normal";
+        }
+    
+    elseif ($bmi >=25.0 && $bmi <=39.9) {
+        $status = "Overweight";
+        }
+    
+    else {$status = "Obese";}
+    
+
 }
+
 // **********************  3  ************************** 
 
 
@@ -79,8 +94,10 @@ else{
                     <!-- silakan taruh code kalian di bawah -->
                     
                     <?php
+                        echo "$bmi ";
                         echo $status;
                     ?>
+
                     <!--  **********************  4  **************************     -->
 
 
